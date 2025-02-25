@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <!-- meta content -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/ORCA-terminal.css">
+</head>
+<body>
+    <script src="/script.js"></script>
+    <script src="ORCA-dialogue.js" type="module"></script>
+    <script src="/ORCA.js" type="module"></script>
+    <div id="desktop">
+        <!-- desktop icons -->
+        <button class="desktop-icon" data-window="computer">
+            <img src="/assets/computer.png">
+            <span class="icon-label">My Computer</span>
+        </button>
+        <button class="desktop-icon" data-window="documents">
+            <img src="/assets/documents.png">
+            <span class="icon-label">My Documents</span>
+        </button>
+        <button class="desktop-icon" data-window="ORCA">
+            <img src="/assets/orca_base.png">
+            <span class="icon-label">ORCA Terminal</span>
+        </button>
+        <button class="desktop-icon" data-window="network">
+            <img src="/assets/network.png">
+            <span class="icon-label">Network Neighborhood</span>
+        </button>
+        <button class="desktop-icon" data-window="recycle">
+            <img src="/assets/recycle.png">
+            <span class="icon-label">Recycle Bin</span>
+        </button>
+        <button class="desktop-icon" data-window="connect">
+            <img src="/assets/connect.png">
+            <span class="icon-label">Connect to the Internet</span>
+        </button>
+        <!-- my documents -->
+         <div id="documents" class="window-panel">
+            <div class="title-bar">
+                <span>My Documents</span>
+                <button class="close-button">X</button>
+            </div>
+            <div class="window-content">
+                <h2>My Documents</h2>
+                <p>Here's a test. Test test test.</p>
+                <div class="document-grid">
+                    <button class="document-icon" data-file="meeting-notes.html">
+                        <img src="/assets/file.png" class="icon-image">
+                        <span class="icon-label">Meeting Notes_Nov 1998.txt</span>
+                    </button>
+                    <button class="document-icon" data-window="doc2">
+                        <img src="/assets/file.png" class="icon-image">
+                        <span class="icon-label">Data Report_13 Dec 1998.txt</span>
+                    </button>
+                </div>
+            </div>
+         </div>
+         <!-- actual documents -->
+          <div id="document-viewer" class="window-panel">
+            <div class="title-bar">
+                <span id="document-title">Document Viewer</span>
+                <button class="close-button">X</button>
+            </div>
+            <div class="window-content" id="document-content">
+                <p>Select a document to view.</p>
+            </div>
+          </div>
+          <div id="doc2" class="window-panel">
+            <div class="title-bar">
+                <span>Document Name Here</span>
+                <button class="close-button">X</button>
+            </div>
+            <div class="window-content">
+                <p>Research Notes Go Here. Text Text Text.</p>
+            </div>
+          </div>
+         <!-- recycle bin -->
+         <div id="recycle" class="window-panel">
+            <div class="title-bar">
+                <span>Recycle Bin</span>
+                <button class="close-button">X</button>
+            </div>
+            <div class="window-content">
+                <p>Some stuff goes here in the future</p>
+            </div>
+         </div>
+         <!-- my computer -->
+         <div id="computer" class="window-panel">
+            <div class="title-bar">
+                <span>My Computer</span>
+                <button class="close-button">X</button>
+            </div>
+            <div class="window-content">
+                <p>Some stuff goes here in the future</p>
+            </div>
+         </div>
+         <!-- network neighborhood -->
+         <div id="network" class="window-panel">
+            <div class="title-bar">
+                <span>Network Neighborhood</span>
+                <button class="close-button">X</button>
+            </div>
+            <div class="window-content network-navigator">
+                <div class="nav-panel">
+                    <h2>Network Neighborhood</h2>
+                    <p>This folder contains links to all of the computers in your workgroup and on the entire network.</p>
+                </div>
+                <div class="list-panel">
+                    <div class="nav-item">
+                        <img src="/assets/globe.png">
+                        <span>Entire Network</span>
+                    </div>
+                    <div class="nav-item">
+                        <img src="/assets/neighbor.png">
+                        <span>MERCER</span>
+                    </div>
+                    <div class="nav-item">
+                        <img src="/assets/neighbor.png">
+                        <span>NARVÁEZ</span>
+                    </div>
+                    <div class="nav-item">
+                        <img src="/assets/neighbor.png">
+                        <span>KWON</span>
+                    </div>
+                    <div class="nav-item">
+                        <img src="/assets/neighbor.png">
+                        <span>ILYUSHIN</span>
+                    </div>
+                    <div class="nav-item">
+                        <img src="/assets/neighbor.png">
+                        <span>LINDHOLM</span>
+                    </div>
+                    <div class="nav-item">
+                        <img src="/assets/neighbor.png">
+                        <span>BRAUN</span>
+                    </div>
+                </div>
+            </div>
+         </div>
+         <!-- ORCA terminal -->
+         <div id="ORCA" class="window-panel">
+            <div class="title-bar">
+                <span>ORCA Terminal</span>
+                <button class="close-button">X</button>
+            </div>
+            <div class="chat-container">
+                <div id="chat-messages" class="chat-messages"></div>
+                <div class="chat-input-container">
+                    <input type="text" class="chat-input" id="chat-input" placeholder="Reply to ORCA...">
+                    <button class="send-button" id="send-button">Send</button>
+                </div>
+            </div>
+         </div>
+         <!-- weather -->
+        <div id="weather" class="window-panel">
+            <div class="title-bar">
+                <span>Weather</span>
+                <button class="close-button">X</button>
+            </div>
+            <div class="window-content">
+                <div class="weather-display">
+                    <div class="current-conditions">
+                        <h2>Current Conditions</h2>
+                        <div class="weather-grid">
+                            <div class="weather-item">
+                                <strong>Temperature:</strong>
+                                <span>-20°C</span>
+                            </div>
+                            <div class="weather-item">
+                                <strong>Conditions:</strong>
+                                <span>Ice fog</span>
+                            </div>
+                            <div class="weather-item">
+                                <strong>Wind:</strong>
+                                <span>75 kph E</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="forecast">
+                        <h2>3-Day Forecast</h2>
+                        <div class="forecast-grid">
+                            <div class="forecast-day">
+                                <strong>Tomorrow</strong>
+                                <span>-22.7°C | -22.2°C</span>
+                                <span>Frigid</span>
+                            </div>
+                            <div class="forecast-day">
+                                <strong>Day 2</strong>
+                                <span>-18°C | -21°C</span>
+                                <span>Passing clouds</span>
+                            </div>
+                            <div class="forecast-day">
+                                <strong>Day 3</strong>
+                                <span>-17°C | -20°C</span>
+                                <span>Passing clouds</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--internet connection -->
+        <div id="connect" class="window-panel">
+            <div class="title-bar">
+                <span>Connect to the Internet</span>
+                <button class="close-button">X</button>
+            </div>
+            <div class="window-content">
+                <div class="connection-dialogue">
+                    <div class="dialogue-title">Connecting to the Internet</div>
+                    <div class="progress-container">
+                        <div class="progress-bar"></div>
+                    </div>
+                    <div class="status-message">Initializing connection...</div>
+                    <div class="retry-button" style="display: none;">
+                        <button>Try Again</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- taskbar -->
+    <div id="taskbar">
+        <div id="start-menu" class="start-menu">
+            <div class="start-sidebar">
+                <img src="/assets/#" class="start-logo">
+                <span class="start-text">Windows 98</span>
+            </div>
+            <ul class="start-menu-items">
+                <li><button>Windows Update</button></li>
+                <li class="has-submenu">
+                    <button>Programs ▶</button>
+                    <ul class="submenu">
+                        <li><button>###</button></li>
+                        <li><button>###</button></li>
+                        <li><button>###</button></li>
+                    </ul>
+                </li>
+                <li><button><img src="/assets/favs.png" class="menu-icon"> Favorites</button></li>
+                <li><button onclick="openWindow('documents')"><img src="/assets/docs.png" class="menu-icon"> Documents</button></li>
+                <li class="has-submenu">
+                    <button><img src="/assets/settings.png" class="menu-icon"> Settings ▶</button>
+                    <ul class="submenu">
+                        <li><button><img src="/assets/control_panel.png" class="menu-icon">Control panel</button></li>
+                        <li><button>Printers</button></li>
+                        <li><button>Taskbar & Start Menu...</button></li>
+                    </ul>
+                </li>
+                <li><button><img src="/assets/find.png" class="menu-icon"> Find</button></li>
+                <li><button><img src="/assets/help.png" class="menu-icon"> Help</button></li>
+                <li><button>Run...</button></li>
+                <li class="separator"></li>
+                <li><button>Log Off</button></li>
+                <li><button onclick="shutdown()">Shut Down</button></li>
+            </ul>
+        </div>
+        <button class="start-button">
+            <img src="/assets/start.png"><b>Start</b>
+        </button>
+        <div class="taskbar-divider"></div>
+        <div class="tasks"></div>
+        <div class="taskbar-divider"></div>
+        <div class="tray">
+            <div class="tray-icons">
+                <img class="tray-icon" src="/assets/weather.png" onclick="openWeather()">
+            </div>
+            <div class="taskbar-time">
+                <iframe src="https://free.timeanddate.com/clock/i9rt8ptu/n1034/fn8/tct/pct/ts1" frameborder="0" width="80" height="20"  allowtransparency="true"></iframe>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
