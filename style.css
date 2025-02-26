@@ -424,3 +424,9 @@ html, body {
     height: 48px;
     margin-bottom: 4px;
 }
+
+/* Help Window Styling */
+#help-window {
+    min-width: 400px;
+    min-height: 200px;
+}

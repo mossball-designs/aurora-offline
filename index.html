@@ -52,9 +52,13 @@
                         <img src="/assets/file.png" class="icon-image">
                         <span class="icon-label">Meeting Notes_Nov 1998.txt</span>
                     </button>
-                    <button class="document-icon" data-window="doc2">
+                    <button class="document-icon" data-window="data-report.html">
                         <img src="/assets/file.png" class="icon-image">
                         <span class="icon-label">Data Report_13 Dec 1998.txt</span>
+                    </button>
+                    <button class="document-icon" data-window="#">
+                        <img src="/assets/locked_file.png" class="icon-image">
+                        <span class="icon-label">Document Name Here</span>
                     </button>
                 </div>
             </div>
@@ -67,15 +71,6 @@
             </div>
             <div class="window-content" id="document-content">
                 <p>Select a document to view.</p>
-            </div>
-          </div>
-          <div id="doc2" class="window-panel">
-            <div class="title-bar">
-                <span>Document Name Here</span>
-                <button class="close-button">X</button>
-            </div>
-            <div class="window-content">
-                <p>Research Notes Go Here. Text Text Text.</p>
             </div>
           </div>
          <!-- recycle bin -->
@@ -251,7 +246,7 @@
                     </ul>
                 </li>
                 <li><button><img src="/assets/find.png" class="menu-icon"> Find</button></li>
-                <li><button><img src="/assets/help.png" class="menu-icon"> Help</button></li>
+                <li><button onclick="openHelpWindow()"><img src="/assets/help.png" class="menu-icon"> Help</button></li>
                 <li><button>Run...</button></li>
                 <li class="separator"></li>
                 <li><button>Log Off</button></li>

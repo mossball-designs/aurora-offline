@@ -206,3 +206,62 @@ function openWeather() {
     bringToFront(weatherPanel);
   }
 };
+
+// HELP WINDOW
+function openHelpWindow() {
+    let helpWindow = document.getElementById('help-window');
+    if (!helpWindow) {
+        helpWindow = document.createElement('div');
+        helpWindow.id = 'help-window';
+        helpWindow.className = 'window-panel';
+        helpWindow.innerHTML = `
+            <div class="title-bar">
+                <span>Help</span>
+                <button class="close-button" onclick="closeHelpWindow()">X</button>
+            </div>
+            <div class="window-content">
+                <p id="help-message">Loading helpful information...</p>
+                <button onclick="randomizeHelpMessage()">More Help</button>
+            </div>
+            `;
+        document.body.appendChild(helpWindow);
+    }
+    helpWindow.style.left = '50%';
+    helpWindow.style.top = '50%';
+    helpWindow.style.transform = 'translate(-50%, -50%)';
+    helpWindow.classList.add('active');
+    bringToFront(helpWindow);
+    randomizeHelpMessage();
+}
+
+// close help window
+function closeHelpWindow () {
+    const helpWindow = document.getElementById('help-window');
+    if (helpWindow) {
+        helpWindow.classList.remove('active');
+    }
+}
+
+// random help message generation
+function randomizeHelpMessage() {
+    const messages = [
+        "Did you mean to press 'Help' or were you just curious? Either way, this is all you get.",
+        "Try clicking on different things across the screen. Maybe that'll do something.",
+        "Consult the user manual before submitting a help ticket. Please.",
+        "Have you tried turning it off and turning it back on?",
+        "If you get stuck, you can always ask ORCA for assistance.",
+        "Missing a document? Be sure you didn't accidentally send it to recycling.",
+        "Remember to clear your cache!",
+        "If any of these aren't helpful, you can always submit a support ticket to LINDHOLM@ARCTIC.CIRCLE"
+    ];
+    document.getElementById('help-message').textContent = messages[Math.floor(Math.random() * messages.length)];
+}
+
+// ensures help button in the start menu opens the window
+window.onload = function() {
+    document.querySelectorAll('.start-menu button').forEach(button => {
+        if (button.textContent.includes('Help')) {
+            button.setAttribute('onclick', 'openHelpWindow()');
+        }
+    })
+}
