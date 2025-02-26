@@ -25,8 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     .catch(() => {
                         documentContent.innerHTML = "<p>Error loading document.</p>";
                     });
-    
-                documentViewer.style.display = 'block'; // Ensure it's visible
+
                 documentViewer.style.left = '50%';
                 documentViewer.style.top = '50%';
                 documentViewer.style.transform = 'translate(-50%, -50%)';
@@ -265,3 +264,102 @@ window.onload = function() {
         }
     })
 }
+
+// locked documents
+document.addEventListener('DOMContentLoaded', function() {
+    let highestZIndex = 1;
+    
+    function bringToFront(panel) {
+        highestZIndex++;
+        panel.style.zIndex = highestZIndex;
+    }
+
+    // Passwords
+    const documentPasswords = {
+        "classified-report.html": "pakicetus98"
+    };
+
+    // Pop-up elements
+    const passwordPopup = document.getElementById('password-popup');
+    const passwordInput = document.getElementById('document-password');
+    const passwordError = document.getElementById('password-error');
+    const passwordSubmit = document.getElementById('password-submit');
+    const passwordCancel = document.getElementById('password-cancel');
+
+    let lockedFileToOpen = null;
+
+    // Handle clicking on document buttons inside "My Documents"
+    document.querySelectorAll('.document-icon').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.stopPropagation();
+            
+            const file = this.getAttribute('data-file');
+            const isLocked = this.getAttribute('data-locked') === "true";
+            
+            if (isLocked) {
+                // Show the password pop-up instead of the document
+                passwordPopup.style.display = 'block';
+                passwordInput.value = '';
+                passwordError.style.display = 'none';
+                lockedFileToOpen = file; // Store file name for later
+                
+                // Bring pop-up to front
+                highestZIndex++;
+                passwordPopup.style.zIndex = highestZIndex;
+            } else {
+                openDocument(file);
+            }
+        });
+    });
+    
+    // Function to open document after password entry
+    function openDocument(file) {
+        const documentViewer = document.getElementById('document-viewer');
+        const documentTitle = document.getElementById('document-title');
+        const documentContent = document.getElementById('document-content');
+    
+        fetch(file)
+            .then(response => response.text())
+            .then(data => {
+                documentContent.innerHTML = data;
+                documentTitle.textContent = file.split('/').pop();
+            })
+            .catch(() => {
+                documentContent.innerHTML = "<p>Error loading document.</p>";
+            });
+    
+        // Ensure "My Documents" is also brought to the front
+        const documentsWindow = document.getElementById('documents');
+        if (documentsWindow) {
+            bringToFront(documentsWindow);
+        }
+    
+        // Display and bring document viewer to the front
+        documentViewer.style.display = 'block';
+        documentViewer.style.left = '50%';
+        documentViewer.style.top = '50%';
+        documentViewer.style.transform = 'translate(-50%, -50%)';
+        documentViewer.classList.add('active');
+    
+        bringToFront(documentViewer);
+    }
+
+    // Handle password submission
+    passwordSubmit.addEventListener('click', function() {
+        if (lockedFileToOpen && passwordInput.value === documentPasswords[lockedFileToOpen]) {
+            passwordPopup.style.display = 'none';
+    
+            // Delay opening document viewer until AFTER password is accepted
+            setTimeout(() => {
+                openDocument(lockedFileToOpen);
+            }, 300);
+        } else {
+            passwordError.style.display = 'block';
+        }
+    });
+
+    // Cancel password entry
+    passwordCancel.addEventListener('click', function() {
+        passwordPopup.style.display = 'none';
+    });
+});

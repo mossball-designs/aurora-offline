@@ -402,6 +402,10 @@ html, body {
     border: 1px solid #ccc;
 }
 
+.document-divider {
+    border-top: 3px solid #818181;
+}
+
 .document-icon {
     display: flex;
     flex-direction: column;
@@ -429,4 +433,72 @@ html, body {
 #help-window {
     min-width: 400px;
     min-height: 200px;
+}
+
+/* Password Pop-up */
+.popup-container {
+    display: none;
+    position: fixed;
+    font-family: "MS Sans Serif", sans-serif;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #c3c3c3;
+    padding: 4px;
+    box-shadow: 3px 3px 0px #808080, -3px -3px 0px white;
+    z-index: 5000 !important;
+}
+
+.popup-box {
+    background: #dfdfdf;
+    padding: 12px;
+    border: 2px solid #808080;
+    box-shadow: inset -2px -2px 0px white, inset 2px 2px 0px #404040;
+    text-align: center;
+    z-index: 5100 !important;
+}
+
+.popup-box h3 {
+    background: linear-gradient(to right, #00007e, #0000ff);
+    color: white;
+    padding: 4px;
+    margin: -12px -12px 8px -12px;
+    text-align: left;
+    font-size: 14px;
+}
+
+#document-password {
+    width: 100%;
+    padding: 4px;
+    font-size: 12px;
+    border: 2px inset #808080;
+    background: white;
+    font-family: "MS Sans Serif";
+}
+
+.popup-box button {
+    font-family: "MS Sans Serif";
+    font-size: 12px;
+    background: #c3c3c3;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-bottom: 2px solid #808080;
+    border-right: 2px solid #808080;
+    padding: 3px 10px;
+    cursor: pointer;
+    margin: 4px;
+}
+
+.popup-box button:active {
+    border-top: 2px solid #808080;
+    border-left: 2px solid #808080;
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    font-family: "MS Sans Serif", sans-serif;
 }

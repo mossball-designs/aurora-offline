@@ -52,13 +52,13 @@
                         <img src="/assets/file.png" class="icon-image">
                         <span class="icon-label">Meeting Notes_Nov 1998.txt</span>
                     </button>
-                    <button class="document-icon" data-window="data-report.html">
+                    <button class="document-icon" data-file="data-report.html">
                         <img src="/assets/file.png" class="icon-image">
                         <span class="icon-label">Data Report_13 Dec 1998.txt</span>
                     </button>
-                    <button class="document-icon" data-window="#">
+                    <button class="document-icon locked-document" data-file="classified-report.html" data-locked="true">
                         <img src="/assets/locked_file.png" class="icon-image">
-                        <span class="icon-label">Document Name Here</span>
+                        <span class="icon-label">Classified_Report.txt</span>
                     </button>
                 </div>
             </div>
@@ -73,6 +73,16 @@
                 <p>Select a document to view.</p>
             </div>
           </div>
+          <!-- password pop-up -->
+           <div id="password-popup" class="popup-container">
+            <div class="popup-box">
+                <h3>Enter Password</h3>
+                <input type="password" id="document-password" placeholder="password">
+                <p id="password-error" class="error-message" style="display: none;">Incorrect password.</p>
+                <button id="password-submit">Submit</button>
+                <button id="password-cancel">Cancel</button>
+            </div>
+           </div>
          <!-- recycle bin -->
          <div id="recycle" class="window-panel">
             <div class="title-bar">
