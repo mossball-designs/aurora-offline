@@ -79,7 +79,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (windowId === 'ORCA') {
                 messagesContainer.innerHTML = ''; // Clear previous messages
-                showWelcomeSequence(() => startDialogueTree(addMessage)); // Start dialogue after greeting
+                showWelcomeSequence(() => {
+                    // Wait 1 second after the last greeting message before starting the tree
+                    startDialogueTree(addMessage, 1000);
+                });
             }
 
             panel.style.left = '50%';

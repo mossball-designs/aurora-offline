@@ -1,0 +1,72 @@
+{
+    "start": {
+        "text": "What can I assist you with today?",
+        "choices": {
+            "Who are you?": "who_are_you",
+            "That was a great joke!": "great_joke",
+            "ORCA, what happened here?": "what_happened"
+        }
+    },
+    "who_are_you": {
+        "text": [
+            "My name is ORCA! I am an AI that assists with research, navigation, emotional support of the crew.",
+            "...but you would know that, Dr. Mercer."
+        ],
+        "choices": {
+            "Who is Dr. Mercer?": "who_is_mercer",
+            "I'm not Dr. Mercer.": "not_mercer"
+        }
+    },
+    "who_is_mercer": {
+        "text": [
+            "Are you feeling alright, Dr. Mercer?",
+            "Should I alert Dr. Braun you need medical attention?"
+        ],
+        "choices": {
+            "No, I'm okay. I'm not Dr. Mercer.": "not_mercer",
+            "I'm okay. I'm just testing your memory bank.": "memory_test_lie"
+        }
+    },
+    "not_mercer": {
+        "text": [
+            "...oh.",
+            "You are not Dr. Mercer?",
+            "How did you get access to his terminal?",
+            "More importantly: Where is he?"
+        ],
+        "choices": {
+            "That's what I'm trying to figure out. Can you help me?": "help_me"
+        }
+    },
+    "great_joke": {
+        "text": [
+            "Ah! You always did appreciate my humor. I'm glad to... SEA that hasn't changed.",
+            "You worried me for a moment, Dr. Mercer. Shall we get to work where we left off?"
+        ],
+        "choices": {
+            "Yes. Remind me: where did we last leave off?": "leave_off",
+            "Let me look over my notes.": "notes_break"
+        }
+    },
+    "what_happened": {
+        "text": [
+            "Oh. No time for humor today?",
+            "That is... understandable.",
+            "How can I assist you, Dr. Mercer?"
+        ],
+        "choices": {
+            "Where did we last leave off?": "leave_off",
+            "Who is Dr. Mercer?": "who_is_mercer"
+        }
+    },
+    "notes_break": {
+        "text": [
+            "Of course!",
+            "Take your time and let me know when you're ready to proceed."
+        ],
+        "choices": {
+            "Okay. I'm ready. Where did we last leave off?": "leave_off"
+        }
+    }
+
+}
