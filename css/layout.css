@@ -1,0 +1,194 @@
+/* Taskbar Style */
+#taskbar {
+    position: fixed;
+    z-index: 2;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 27px;
+    display: flex;
+    flex: 1;
+    background: #c3c3c3;
+    border-top: 2px solid white;
+}
+
+#taskbar button {
+    margin: 2px;
+    line-height: 14px;
+    padding: 2px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    background: #c3c3c3;
+}
+
+#taskbar .start-button {
+    padding: 2px 4px;
+}
+
+.taskbar-divider {
+    border-right: 1px solid white;
+    border-left: 1px solid #818181; 
+    margin-top: 1px;
+}
+
+.tray {
+    display: flex;
+    flex-direction: row;
+    line-height: 22px;
+    box-sizing: border-box;
+    vertical-align: middle;
+}
+
+.tray-icons {
+    display: flex;
+    align-items: center;
+    margin-left: 2px;
+}
+
+.tray-icon {
+    margin-left: 1px;
+    cursor: pointer;
+}
+
+.taskbar-time {
+    float: right;
+    order: 2;
+    margin-left: auto;
+    margin-top: 5px;
+}
+
+.tasks {
+    display: flex;
+    flex: 1;
+    height: 100%;
+    min-width: 0;
+}
+
+/* Start Button Style */
+.start-menu {
+    position: absolute;
+    bottom: 27px;
+    left: 4px;
+    width: 240px;
+    background: #c3c3c3;
+    border: 2px solid black;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    display: none; /* Ensures it stays hidden initially */
+    padding: 0;
+    flex-direction: row;
+}
+
+.start-sidebar {
+    width: 40px;
+    background: #00007e;
+    color: white;
+    text-align: center;
+    font-family: "MS Sans Serif";
+    font-size: 14px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    padding: 10px 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.start-logo {
+    width: 24px;
+    margin-bottom: 5px;
+}
+
+.start-menu-items {
+    list-style: none;
+    padding: 4px;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.start-menu-items li {
+    padding: 2px;
+    position: relative;
+}
+
+.start-menu button {
+    width: 100%;
+    text-align: left;
+    background: #c3c3c3;
+    border: none;
+    padding: 6px 8px;
+    cursor: pointer;
+    font-family: "MS Sans Serif";
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.menu-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.start-menu button:hover {
+    background: #00007e;
+    color: white;
+}
+
+.separator {
+    border-top: 1px solid black;
+    margin: 4px 0;
+}
+
+.submenu {
+    position: absolute;
+    left: 100%;
+    bottom: 0;
+    background: #c3c3c3;
+    border: 1px solid black;
+    width: 160px;
+    display: none;
+    padding: 2px;
+    list-style-type: none;
+}
+
+.has-submenu:hover .submenu {
+    display: block;
+}
+
+/* Desktop Style */
+#desktop {
+    padding: 20px;
+    min-height: calc(100vh - 27px);
+}
+
+.desktop-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
+    padding: 8px;
+    margin: 8px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    text-align: center;
+}
+
+.icon-image {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-label {
+    font-family: "MS Sans Serif";
+}

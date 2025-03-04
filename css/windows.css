@@ -1,0 +1,86 @@
+/* Pop-Up Window Style */
+
+.window-panel {
+    display: none;
+    position: fixed;
+    background: white;
+    min-width: 500px;
+    min-height: 200px;
+    transform: translate(-50%, -50%);
+    border-top: 4px solid white;
+    border-left: 4px solid white;
+    border-bottom: 4px solid #818181;
+    border-right: 4px solid #818181;
+    background: #c3c3c3;
+    font-family: "MS Sans Serif";
+    z-index: 1;
+}
+
+.window-panel.active {
+    display: block;
+}
+
+.window-content {
+    padding: 16px;
+    background: white;
+    border-top: 8px solid #c3c3c3;
+    border-left: 8px solid #c3c3c3;
+    border-bottom: 8px solid #c3c3c3;
+    border-right: 8px solid #c3c3c3;
+    overflow: scroll;
+}
+
+.network-navigator {
+    display: flex;
+    padding: 2px;
+    height: calc(100% - 24px);
+}
+
+.nav-panel {
+    width: 200px;
+    border-right: 1px solid #808080;
+    padding: 5px;
+}
+
+.list-panel {
+    flex-grow: 1;
+    padding: 5px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 2px 4px;
+    margin: 2px 0;
+    font-size: 12px;
+}
+
+.nav-item img {
+    margin-right: 5px;
+}
+
+.title-bar {
+    background: linear-gradient(to right, #00007e, #0000ff);
+    padding: 8px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: grab;
+    color: white;
+}
+
+.title-bar:active {
+    cursor: grabbing;
+}
+
+.close-button {
+    background: #c3c3c3;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-bottom: 1px solid #818181;
+    border-right: 1px solid #818181;
+    color: black;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 4px 8px;
+}

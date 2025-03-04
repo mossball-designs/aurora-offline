@@ -1,0 +1,85 @@
+/* Weather Style */
+.weather-display {
+    padding: 10px;
+}
+
+.weather-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.weather-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    background: #f0f0f0;
+    border: 1px solid #d0d0d0;
+}
+
+.forecast-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.forecast-day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background: #f0f0f0;
+    border: 1px solid #d0d0d0;
+    text-align: center;
+}
+
+.forecast-day strong {
+    margin-bottom: 5px;
+}
+
+#weather {
+    width: 400px;
+}
+
+/* control panel */
+.control-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 10px;
+}
+
+.control-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background: white;
+    cursor: pointer;
+    border: none;
+}
+
+.control-icon img {
+    width: 48px;
+    height: 48px;
+}
+
+.control-panel {
+    display: flex;
+    padding: 2px;
+    height: calc(100% - 24px);
+}
+
+.ctrl-nav {
+    width: 200px;
+    border-right: 1px solid #808080;
+    padding: 5px;
+}
+
+.ctrl-list {
+    flex-grow: 1;
+    padding: 5px;
+    margin-left: 10px;
+}

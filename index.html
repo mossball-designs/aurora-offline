@@ -5,8 +5,13 @@
     <!-- meta content -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/ORCA-terminal.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/documents.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/start-menu.css">
+    <link rel="stylesheet" href="/css/windows.css">
+    <link rel="stylesheet" href="/css/extras.css">
+    <link rel="stylesheet" href="/css/ORCA-terminal.css">
 </head>
 <body>
     <script src="/script.js"></script>
@@ -228,6 +233,33 @@
             </div>
         </div>
     </div>
+    <!-- control panel -->
+     <div id="control-panel" class="window-panel">
+        <div class="title-bar">
+            <span>Control Panel</span>
+            <button class="close-button">X</button>
+        </div>
+        <div class="window-content control-panel">
+            <div class="ctrl-nav">
+                <h2>Control Panel</h2>
+                <p>Use the settings in Control Panel to personalize your computer.</p>
+            </div>
+            <div class="control-grid ctrl-list">
+                <button class="control-icon">
+                    <img src="/assets/display.png">
+                    <span>Display</span>
+                </button>
+                <button class="control-icon">
+                    <img src="/assets/sound.png">
+                    <span>Sound</span>
+                </button>
+                <button class="control-icon">
+                    <img src="/assets/system.png">
+                    <span>System</span>
+                </button>
+            </div>
+        </div>
+     </div>
     <!-- taskbar -->
     <div id="taskbar">
         <div id="start-menu" class="start-menu">
@@ -250,7 +282,7 @@
                 <li class="has-submenu">
                     <button><img src="/assets/settings.png" class="menu-icon"> Settings ▶</button>
                     <ul class="submenu">
-                        <li><button><img src="/assets/control_panel.png" class="menu-icon">Control panel</button></li>
+                        <li><button onclick="openWindow('control-panel')"><img src="/assets/control_panel.png" class="menu-icon">Control panel</button></li>
                         <li><button>Printers</button></li>
                         <li><button>Taskbar & Start Menu...</button></li>
                     </ul>
