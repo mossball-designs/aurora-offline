@@ -14,9 +14,13 @@
     <link rel="stylesheet" href="/css/ORCA-terminal.css">
 </head>
 <body>
-    <script src="/script.js"></script>
-    <script src="ORCA-dialogue.js" type="module"></script>
-    <script src="/ORCA.js" type="module"></script>
+    <script type="module" src="/javascript/desktop.js"></script>
+    <script type="module" src="/javascript/window-manager.js"></script>
+    <script type="module" src="/javascript/start-menu.js"></script>
+    <script type="module" src="/javascript/document-manager.js"></script>
+    <script type="module" src="/javascript/ORCA.js"></script>
+    <script type="module" src="/javascript/ORCA-dialogue.js"></script>
+    <script type="module" src="/javascript/script.js"></script>
     <div id="desktop">
         <!-- desktop icons -->
         <button class="desktop-icon" data-window="computer">
@@ -104,8 +108,25 @@
                 <span>My Computer</span>
                 <button class="close-button">X</button>
             </div>
-            <div class="window-content">
-                <p>Some stuff goes here in the future</p>
+            <div class="window-content my-computer">
+                <div class="comp-nav">
+                    <h2>My Computer</h2>
+                    <p>Select an item to view its description.</p>
+                </div>
+                <div class="comp-grid comp-list">
+                    <button class="comp-item">
+                        <img src="/assets/floppy_drive.png">
+                        <span>3½ Floppy (A:)</span>
+                    </button>
+                    <button class="comp-item">
+                        <img src="/assets/c_drive.png">
+                        <span>(C:)</span>
+                    </button>
+                    <button onclick="openWindow('control-panel')" class="comp-item">
+                        <img src="/assets/control_panel.png">
+                        <span>Control panel</span>
+                    </button>
+                </div>
             </div>
          </div>
          <!-- network neighborhood -->
@@ -211,6 +232,17 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <!-- help menu -->
+        <div id="help-window" class="window-panel">
+            <div class="title-bar">
+                <span>Help</span>
+                <button class="close-button" onclick="closeHelpWindow()">X</button>
+            </div>
+            <div class="window-content">
+                <p id="help-message">Loading helpful information...</p>
+                <button onclick="randomizeHelpMessage()">More Help</button>
             </div>
         </div>
         <!--internet connection -->
